@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jupiter Technology Solutions</title>
+
+	<style>
+		#background 
+		{
+		    position:absolute;
+    		z-index:0;
+    		background:white;
+    		display:block;
+    		min-height:50%; 
+    		min-width:50%;
+    		color:yellow;
+		}
+		#bg-text
+		{
+    		color:lightgrey;
+    		font-size:120px;
+    		transform:rotate(300deg);
+    		-webkit-transform:rotate(300deg);
+		}
+		.clock {
+ 		    position: absolute;
+    		top: 12%;
+    		left: 54%;
+    		transform: translateX(-50%) translateY(-50%);
+    		color: #0000FF;
+    		font-size: 60px;
+    		font-family: Orbitron;
+    		letter-spacing: 7px;
+   		}
+	</style>
+
+</head>
+<body>
+
+	<h1>Welcome to Jupiter Technology Solutions, Inc.</h1>
+	<hr>
+	<br>
+	<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div id="background">
+		<p id="bg-text">Coming Soon !!!</p>
+	</div>
+
+	<script type="text/javascript">
+		function showTime(){
+    		var date = new Date();
+    		var h = date.getHours(); 
+    		var m = date.getMinutes(); 
+    		var s = date.getSeconds(); 
+    		var session = "AM";
+    
+    		if(h == 0){
+        		h = 12;
+    		}
+    
+    		if(h > 12){
+        		h = h - 12;
+        		session = "PM";
+    		}
+    
+    		h = (h < 10) ? "0" + h : h;
+    		m = (m < 10) ? "0" + m : m;
+    		s = (s < 10) ? "0" + s : s;
+    
+    		var time = h + ":" + m + ":" + s + " " + session;
+    		document.getElementById("MyClockDisplay").innerText = time;
+    		document.getElementById("MyClockDisplay").textContent = time;
+    
+	    	setTimeout(showTime, 1000);
+    
+		}
+		showTime();
+	</script>
+
+</body>
+</html>
