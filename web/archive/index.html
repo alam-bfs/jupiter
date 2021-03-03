@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Yard</title>
+
+	<style>
+		.clock {
+ 		    position: absolute;
+    		top: 15%;
+    		left: 85%;
+    		transform: translateX(-50%) translateY(-50%);
+    		color: #0000FF;
+    		font-size: 25px;
+    		font-family: Orbitron;
+    		letter-spacing: 7px;
+   		}
+        .date {
+            position: absolute;
+            top: 20%;
+            left: 85%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #0000FF;
+            font-size: 25px;
+            font-family: Orbitron;
+            letter-spacing: 7px;
+        }
+
+        h1 {
+            font-size: 65px;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
+	</style>
+
+</head>
+<body>
+
+	<h1 style="font-family: Stencil Std, fantasy"><center>Welcome to My Yard</center></h1>
+    <br>
+	<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    <div id="MyDateisplay" class="date" onload="showDate()"></div>
+	<br>
+	<br>
+
+	<script type="text/javascript">
+		function showTime(){
+    		var date = new Date();
+    		var h = date.getHours(); 
+    		var m = date.getMinutes(); 
+    		var s = date.getSeconds(); 
+    		var session = "AM";
+    
+    		if(h == 0){
+        		h = 12;
+    		}
+    
+    		if(h > 12){
+        		h = h - 12;
+        		session = "PM";
+    		}
+    
+    		h = (h < 10) ? "0" + h : h;
+    		m = (m < 10) ? "0" + m : m;
+    		s = (s < 10) ? "0" + s : s;
+    
+    		var time = h + ":" + m + ":" + s + " " + session;
+    		document.getElementById("MyClockDisplay").innerText = time;
+    		document.getElementById("MyClockDisplay").textContent = time;
+    
+	    	setTimeout(showTime, 1000);
+    
+		}
+
+        function showDate(){
+
+            var date = new Date();
+
+            yr = date.getFullYear();
+            mon = date.getMonth() + 1;
+            da = date.getDate();
+    
+            document.getElementById("MyDateisplay").innerHTML = mon + "/" + da + "/" + yr;
+
+        }
+
+		showTime();
+        showDate();
+
+
+	</script>
+
+    <img src="images/yard.png" alt="Yard" class="center">
+
+</body>
+</html>

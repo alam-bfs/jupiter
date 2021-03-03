@@ -1,100 +1,148 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-	<title>My Yard</title>
+    <meta charset="utf-8">
+    <title>Jupiter Technology Services, Inc.</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-	<style>
-		.clock {
- 		    position: absolute;
-    		top: 15%;
-    		left: 85%;
-    		transform: translateX(-50%) translateY(-50%);
-    		color: #0000FF;
-    		font-size: 25px;
-    		font-family: Orbitron;
-    		letter-spacing: 7px;
-   		}
-        .date {
-            position: absolute;
-            top: 20%;
-            left: 85%;
-            transform: translateX(-50%) translateY(-50%);
-            color: #0000FF;
-            font-size: 25px;
-            font-family: Orbitron;
-            letter-spacing: 7px;
-        }
-
-        h1 {
-            font-size: 65px;
-        }
-
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 30%;
-        }
-	</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
+
+<style>
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    p {
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
+    h1 {
+        padding: 10px;
+        color: Chartreuse;
+        position: fixed;
+        width: 100%;
+        font-family: 'ink free';
+        font-weight: bold;
+        font-weight: 900;
+    }
+
+    div.container4 {
+        height: 10em;
+        position: relative margin: 0;
+        color: darkblue;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+</style>
+
+
 <body>
 
-	<h1 style="font-family: Stencil Std, fantasy"><center>Welcome to My Yard</center></h1>
-    <br>
-	<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
-    <div id="MyDateisplay" class="date" onload="showDate()"></div>
-	<br>
-	<br>
+    <div class="banner p-3 mb-2 bg-secondary" style="height: 100px;">
+        <div class="banner-content container-fluid" style="text-align:center;">
+            <h1>Jupiter Technology Solutions, Inc.</h1>
+        </div>
+    </div>
 
-	<script type="text/javascript">
-		function showTime(){
-    		var date = new Date();
-    		var h = date.getHours(); 
-    		var m = date.getMinutes(); 
-    		var s = date.getSeconds(); 
-    		var session = "AM";
-    
-    		if(h == 0){
-        		h = 12;
-    		}
-    
-    		if(h > 12){
-        		h = h - 12;
-        		session = "PM";
-    		}
-    
-    		h = (h < 10) ? "0" + h : h;
-    		m = (m < 10) ? "0" + m : m;
-    		s = (s < 10) ? "0" + s : s;
-    
-    		var time = h + ":" + m + ":" + s + " " + session;
-    		document.getElementById("MyClockDisplay").innerText = time;
-    		document.getElementById("MyClockDisplay").textContent = time;
-    
-	    	setTimeout(showTime, 1000);
-    
-		}
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light container">
 
-        function showDate(){
 
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="javascript:alert('Home');">Home</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:alert('Services');">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:alert('Training');">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:alert('Download');">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:alert('About');">About</a>
+                    </li>
+
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <hr>
+        <div class="container4">
+            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-4">
+        <div class="container-fluid py-3">
+            <div class="row">
+                <div class="col-md-5">
+                    <h2 style="font-family: Calibri Light;">Jupiter Technology Solutions, Inc.</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><span style="font-family: Calibri Light;margin:0;padding:0;">Kaiser
+                        Alam</span><span class="small" style="font-family: Calibri Light;margin:0;padding:0;"><br>Email:
+                        alam.bfs@gmail.com</span></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3 text-right small align-self-end">&#169;2021 Jupiter Technology Solutions, Inc.
+                </div>
+            </div>
+        </div>
+    </footer>
+	
+	    <script type="text/javascript">
+        function showTime() {
             var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            var session = "AM";
 
-            yr = date.getFullYear();
-            mon = date.getMonth() + 1;
-            da = date.getDate();
-    
-            document.getElementById("MyDateisplay").innerHTML = mon + "/" + da + "/" + yr;
+            if (h == 0) {
+                h = 12;
+            }
+
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
 
         }
-
-		showTime();
-        showDate();
-
-
-	</script>
-
-    <img src="images/yard.png" alt="Yard" class="center">
+        showTime();
+    </script>
 
 </body>
+
 </html>
